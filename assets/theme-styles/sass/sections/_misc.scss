@@ -1,0 +1,10 @@
+// Miscellaneous Styling for different parts of the theme
+
+//Lightbox
+.mfp-counter {
+	@extend %heading-font;
+}
+
+.edit-post-link {
+	@extend %tertiary-btn;
+}

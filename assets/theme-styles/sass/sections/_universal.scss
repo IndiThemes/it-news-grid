@@ -1,0 +1,222 @@
+/**
+ *	Universal Code for the theme
+ */
+ 
+%tertiary-btn {
+	position: relative;
+	display: inline-block;
+	color: white;
+	border: 0;
+	background-color: $tertiary;
+	border-radius: 0;
+	padding: 0.6em 1em;
+	font-weight: 700;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	@include transition(all 100ms ease-in-out);
+	&:hover, &:focus {
+		&:before {
+			@include darken( 0.1);
+		}
+	}
+}
+ 
+ .shadow1 {
+	@include transition(box-shadow 100ms $standard);
+	&:hover, &:focus {
+		@extend %shadow1;
+	}
+}
+
+.shadow2 {
+	@include transition(box-shadow 100ms $standard);
+	&:hover, &:focus {
+		@extend %shadow2;
+	}
+}
+
+.shadow3 {
+	@include transition(box-shadow 300ms $standard);
+	&:hover, &:focus {
+		@extend %shadow3;
+	}
+}
+
+.shadow4 {
+	@include transition(box-shadow 300ms $standard);
+	&:hover, &:focus {
+		@extend %shadow4;
+	}
+}
+
+.shadow5 {
+	@include transition(box-shadow 600ms $standard);
+	&:hover, &:focus {
+		@extend %shadow5;
+	}
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	@extend %body-font;
+	line-height: 1.8;
+	letter-spacing: .03em;
+	font-weight: 400;
+	color: #333;
+	-webkit-font-smoothing: antialiased;
+}
+
+a, button {
+	color: black;
+	text-decoration: none;
+}
+
+input[type="submit"] {
+	@extend %tertiary-btn;
+}
+
+h1, h2, h3, h4, h5, h6, .title-font {
+	@extend %heading-font;
+	margin: 0.5rem 0;
+	line-height: 1.2;
+	color: $secondary;
+}
+
+
+
+
+h1 {
+	font-size: 3rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.6rem;
+}
+
+h4 {
+	font-size: 1.5rem;
+	letter-spacing: .03em;
+}
+
+h5 {
+	font-size: 1.2rem;
+	letter-spacing: .03em;
+}
+
+h6 {
+	font-size: 1rem;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+
+#primary, #secondary {
+	width: 100%;
+}
+
+blockquote {
+    border-left: solid .2rem $primary;
+    margin: 4rem 0 1.25rem 0;
+    padding: .5rem 0 .5rem 2rem;
+    &:before, &:after {
+        content: "";
+    }
+    & p:last-child {
+        margin: 0;
+    }
+}
+ 
+pre, fieldset, input, textarea, table, table *, hr {
+	border-color: lightness( white, -10% );
+}
+
+figcaption {
+	text-align: center;
+}
+
+th, td {
+    border: solid 1px lightness( white, -10%);
+    padding: 1em 0.5em;
+    line-height: 1.4;
+    margin: 0;
+    #footer-sidebar & {
+	    border: solid 1px rgba(255, 255, 255, 0.2);
+    }
+}
+
+ul, ol {
+    padding-left: .1em;
+    li {
+        margin: .5em 0;
+    }
+}
+
+address {
+	margin-bottom: 1rem;
+	color: lightness( white, -40%);
+	font-style: italic;
+}
+
+cite {
+    font-size: 1em;
+    color: $primary;
+}
+
+hr {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border: 0;
+	border-top: 1px solid lightness(white, -7%);
+}
+
+ins {
+	background-color: lightness($primary, +10%);
+	color: white;
+	text-decoration: none;
+	padding: 0 3px;
+}
+
+pre {
+	background-color: lightness(white, -3%);
+	text-overflow: ellipsis;
+}
+
+q {
+	font-style: italic;
+}
+
+.post-edit-link {
+	color: $tertiary;
+	font-weight: 700;
+}
+
+#content-wrapper {
+	margin: auto;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+.page-header {
+	width: 100%;
+}
+
+.page-content, .entry-content, .entry-summary {
+	margin: 1em 0 0;
+	a {
+		text-decoration: underline;
+	}
+}
+
+.gallery {
+	grid-gap: 0.2em;
+	figure {
+		margin-bottom: 0.2em;
+	}
+	
+}

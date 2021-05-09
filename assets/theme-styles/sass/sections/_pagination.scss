@@ -1,0 +1,20 @@
+/**
+ *	Styling for the Pagination
+ */
+ 
+.itng-pagination {
+	width: 100%;
+	text-align: center;
+	font-weight: 700;
+	.nav-links {
+		& > * {
+			margin: .8em;
+			color: $primary;
+		}
+		span.current {
+			position: relative;
+			color: lightness(white, -35%);
+			font-weight: 700;
+		}
+	}
+}

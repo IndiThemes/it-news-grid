@@ -1,0 +1,22 @@
+//Styling for Contact Form 7
+
+.wpcf7 {
+	input:not([type="submit"]), textarea, select {
+		border-radius: 0;
+	}
+	.wpcf7-checkbox, .wpcf7-radio {
+		.wpcf7-list-item {
+			display: block;
+			input {
+				width: auto;
+			}
+		}
+	}
+	.wpcf7-not-valid-tip {
+		font-size: 0.85em;
+		font-weight: 700;
+	}
+	.wpcf7-quiz-label {
+		display: block;
+	}
+}
