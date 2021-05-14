@@ -44,7 +44,7 @@
 				</header><!-- .entry-header -->
 				
 				<div class="itng_excerpt">
-					<?php do_action('itng_blog_excerpt', 15); ?>
+					<?php do_action('itng_blog_excerpt', get_theme_mod( 'itng-blog-excerpt-length', 15 ) ); ?>
 				</div>
 				
 				<div class="blog-footer">

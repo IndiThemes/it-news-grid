@@ -25,7 +25,6 @@ function itng_custom_colors() {
 	$output .= 
 	'article .entry-meta a,
 	article .blog-footer a,
-	.widget a,
 	.nav-links a,
 	.itng-pagination .nav-links > a
 	{color: ' . $primary_color . ' !important}';

@@ -58,7 +58,6 @@ article.itng-blog {
 	.itng_excerpt {
 		color: #9a9a9a;
 		word-wrap: break-word;
-		@include line-clamp(3);
 		margin-bottom: 1em;
 		font-size: 0.9em;
 		line-height: 1.5em;

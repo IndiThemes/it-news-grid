@@ -131,7 +131,38 @@ input::-moz-focus-inner, input::-moz-focus-outer {
   border-left: solid 4px white;
 }
 
-.customize-control-oro-link a {
+#accordion-section-itng-misc h3 {
+  background-color: #d12223 !important;
+  color: white !important;
+  border-left: solid 4px #a51b1c !important;
+}
+#accordion-section-itng-misc h3:after {
+  color: #ed9090 !important;
+}
+#accordion-section-itng-misc h3:hover {
+  background: #bb1e1f !important;
+}
+
+.customize-control-itng-link a {
   text-align: center;
+  font-weight: 700;
   padding: 1em 0 !important;
+}
+
+#customize-control-itng-support a {
+  background: #c49f5f;
+  border: 0;
+}
+
+#customize-control-itng-review span {
+  line-height: 1.2;
+}
+#customize-control-itng-review a {
+  background: #f2cd16;
+  border: 0;
+}
+
+#customize-control-itng-more a {
+  background: #5dd348;
+  border: 0;
 }

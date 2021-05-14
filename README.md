@@ -43,6 +43,11 @@ Just Install the Theme from the WordPress Repository.
 * v1.0.7
 	Created Theme Page
 	Added Featured Areas
+	
+*v1.0.8
+	Fixed Bugs
+	Added More Flexibility Options
+	Optimized more
 
 
 Good luck!

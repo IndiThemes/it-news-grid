@@ -136,7 +136,45 @@
 	}
 }
 
-.customize-control-oro-link a {
+#accordion-section-itng-misc {
+	h3 {
+		background-color: $primary !important;
+		color: white !important;
+		border-left: solid 4px darken($primary, 10%) !important;
+		&:after {
+			color: lighten($primary, 27%) !important;
+		}
+		&:hover {
+			background: darken($primary, 5%) !important;
+		}
+	}
+}
+
+.customize-control-itng-link a {
 	text-align: center;
+	font-weight: 700;
 	padding: 1em 0 !important;
 }
+
+#customize-control-itng-support a {
+	background: #c49f5f;
+	border: 0;
+}
+
+#customize-control-itng-review {
+	span {
+		line-height: 1.2;
+	}
+	a {
+		background: #f2cd16;
+		border: 0;
+	}
+}
+
+#customize-control-itng-more {
+	a {
+		background: #5dd348;
+		border: 0;
+	}
+}
+

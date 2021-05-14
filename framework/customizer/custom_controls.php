@@ -248,7 +248,7 @@
 		    <label>
 		    	<div id="<?php echo $this->id ?>">
 			    	<p><?php echo $this->description ?></p>
-		    		<a href="<?php echo $this->input_attrs['url'] ?>" class="button button-primary" target="_blank"><?php echo $this->label ?></a>
+		    		<a href="<?php echo $this->input_attrs['url'] ?>" class="button button-primary widefat" target="_blank"><?php echo $this->label ?></a>
 		    	</div>
 		    </label>
 		    <?php

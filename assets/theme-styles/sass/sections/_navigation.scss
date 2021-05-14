@@ -18,7 +18,7 @@
 			& > li {
 				margin: 0;
 				float: left;
-				&.menu-item-has-children > a {
+				&.menu-item-has-children > a, &.page-item-has-children > a {
 					&:after {
 						position: relative;
 						content: "\f107";
@@ -52,7 +52,7 @@
 					a:hover {
 						background-color: rgba(0,0,0,0.08);
 					}
-					&.menu-item-has-children  > a:after {
+					&.menu-item-has-children  > a:after, &.page-item-has-children  > a:after {
 						position: relative;
 						content: "\f105";
 						font-family: "FontAwesome";

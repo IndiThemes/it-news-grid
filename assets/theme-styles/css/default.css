@@ -417,7 +417,7 @@ span.ripple {
     margin: 0;
     float: left;
   }
-  #site-navigation ul#menu-desktop > li.menu-item-has-children > a:after {
+  #site-navigation ul#menu-desktop > li.menu-item-has-children > a:after, #site-navigation ul#menu-desktop > li.page-item-has-children > a:after {
     position: relative;
     content: "";
     font-family: "FontAwesome";
@@ -463,7 +463,7 @@ span.ripple {
   #site-navigation ul#menu-desktop ul li a:hover {
     background-color: rgba(0, 0, 0, 0.08);
   }
-  #site-navigation ul#menu-desktop ul li.menu-item-has-children > a:after {
+  #site-navigation ul#menu-desktop ul li.menu-item-has-children > a:after, #site-navigation ul#menu-desktop ul li.page-item-has-children > a:after {
     position: relative;
     content: "";
     font-family: "FontAwesome";
@@ -1161,10 +1161,6 @@ article.itng-blog .entry-meta > span {
 article.itng-blog .itng_excerpt {
   color: #9a9a9a;
   word-wrap: break-word;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
   margin-bottom: 1em;
   font-size: 0.9em;
   line-height: 1.5em;

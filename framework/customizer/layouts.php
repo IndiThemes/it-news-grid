@@ -102,6 +102,23 @@ function itng_sidebr_customize_register( $wp_customize ) {
             }
         };
     }
+    
+    $wp_customize->add_setting(
+	    'itng-blog-excerpt-length', array(
+		    'default'			=>	15,
+		    'sanitize_callback'	=>	'absint'
+	    )
+    );
+    
+    $wp_customize->add_control(
+	    'itng-blog-excerpt-length', array(
+		    'label'		=>	__('Excerpt Length', 'it-news-grid'),
+		    'description'	=>	__('This works for blog, archives, and Search page', 'it-news-grid'),
+		    'type'		=>	'number',
+		    'section'	=>	'itng_blog',
+		    'priority'	=>	13
+	    )
+    );
 	
 	$wp_customize->add_section(
 		"itng_single", array(
