@@ -2,10 +2,26 @@
 function itng_customize_register_social( $wp_customize ) {
 		// Social Icons
 	$wp_customize->add_section('itng_social_section', array(
-			'title' 	=> esc_html__('Social Icons','it-news-grid'),
+			'title' 	=> esc_html__( 'Top Bar', 'it-news-grid' ),
 			'priority' 	=> 70,
 			'panel'		=> 'itng_header'
 	));
+	
+	$wp_customize->add_setting(
+		'itng_top_bar_enable', array(
+			'default'	=>	1,
+			'sanitize_callback'	=>	'itng_sanitize_checkbox'
+		)
+	);
+	
+	$wp_customize->add_control(
+		'itng_top_bar_enable', array(
+			'label'	=>	__('Enable Top Bar', 'it-news-grid'),
+			'type'	=>	'checkbox',
+			'section'	=>	'itng_social_section',
+			'priority'	=>	1
+		)
+	);
 	
 	$wp_customize->add_setting(
 		'itng_social_enable', array(
@@ -16,7 +32,7 @@ function itng_customize_register_social( $wp_customize ) {
 	
 	$wp_customize->add_control(
 		'itng_social_enable', array(
-			'label'	=>	__('Enable Social Icons in Header', 'it-news-grid'),
+			'label'	=>	__('Enable Social Icons', 'it-news-grid'),
 			'type'	=>	'checkbox',
 			'section'	=>	'itng_social_section',
 			'priority'	=>	5
@@ -53,7 +69,7 @@ function itng_customize_register_social( $wp_customize ) {
 					'section' 	=> 'itng_social_section',
 					'type' 		=> 'select',
 					'choices' 	=> $social_networks,
-		));
+		) );
 
 		$wp_customize->add_setting(
 			'itng_social_url'.$x, array(
@@ -69,23 +85,25 @@ function itng_customize_register_social( $wp_customize ) {
 		));
 
 	endfor;
-
-	function itng_sanitize_social( $input ) {
-		$social_networks = array(
-					'none' ,
-					'facebook-f',
-					'twitter',
-					'instagram',
-					'rss',
-					'pinterest-p',
-					'vimeo',
-					'youtube',
-					'flickr'
-				);
-		if ( in_array($input, $social_networks) )
-			return $input;
-		else
-			return '';
-	}
+	
 }
 add_action( 'customize_register', 'itng_customize_register_social' );
+
+
+function itng_sanitize_social( $input ) {
+	$social_networks = array(
+				'none' ,
+				'facebook-f',
+				'twitter',
+				'instagram',
+				'rss',
+				'pinterest-p',
+				'vimeo',
+				'youtube',
+				'flickr'
+			);
+	if ( in_array($input, $social_networks) )
+		return $input;
+	else
+		return '';
+}

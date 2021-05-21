@@ -44,10 +44,13 @@ Just Install the Theme from the WordPress Repository.
 	Created Theme Page
 	Added Featured Areas
 	
-*v1.0.8
+* v1.0.8
 	Fixed Bugs
 	Added More Flexibility Options
 	Optimized more
+	
+* v1.0.9
+	Added Options for Top Bar
 
 
 Good luck!

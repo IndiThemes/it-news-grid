@@ -116,6 +116,21 @@ function itng_header_customize_register( $wp_customize ) {
         }
     };
     
+    $wp_customize->add_setting(
+		'itng_top_menu_enable', array(
+			'default'	=>	1,
+			'sanitize_callback'	=>	'itng_sanitize_checkbox'
+		)
+	);
+	
+	$wp_customize->add_control(
+		'itng_top_menu_enable', array(
+			'label'	=>	__('Enable Top Menu', 'it-news-grid'),
+			'type'	=>	'checkbox',
+			'section'	=>	'itng_social_section',
+			'priority'	=>	1
+		)
+	);
 }
  
 add_action("customize_register", "itng_header_customize_register");

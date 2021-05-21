@@ -36,7 +36,9 @@
   */
  function itng_get_social() {
 	 
-	get_template_part('framework/header/social');
+	if ( !empty( get_theme_mod( 'itng_social_enable', 1 ) ) ) :
+		get_template_part('framework/header/social');
+	endif;
 	 
  }
  add_action('itng_top_bar_area', 'itng_get_social', 5);
@@ -46,7 +48,9 @@
  */
  function itng_quicklinks_menu() {
 	 
-	 get_template_part( 'framework/header/quick-links' );
+	if ( !empty( get_theme_mod('itng_top_menu_enable') ) ) :
+		get_template_part( 'framework/header/quick-links' );
+	endif;
 	 
  }
  add_action('itng_top_bar_area', 'itng_quicklinks_menu', 10);
@@ -61,6 +65,16 @@ function itng_get_masthead() {
 	case 'style_1' : ?>
 	
     <header id="masthead" class="site-header style-1">
+	    
+	    <?php if ( !empty(get_theme_mod( 'itng_top_bar_enable', 1) ) ) : ?>
+	    <div id="itng-top-bar">
+		    <div class="container">
+			    <div class="row align-items-center">
+			    	<?php do_action('itng_top_bar_area'); ?>
+			    </div>
+		    </div>
+	    </div>
+	    <?php endif; ?>
 	    
         <div id="header-image">
 	        <div class="site-branding">
@@ -91,6 +105,7 @@ function itng_get_masthead() {
 	
     <header id="masthead" class="site-header style-2">
 	    
+	    <?php if ( !empty( get_theme_mod( 'itng_top_bar_enable', 1) ) ) : ?>
 	    <div id="itng-top-bar">
 		    <div class="container">
 			    <div class="row align-items-center">
@@ -98,6 +113,7 @@ function itng_get_masthead() {
 			    </div>
 		    </div>
 	    </div>
+	    <?php endif; ?>
 	    
 	    <div class="container">
 		    <div id="logo-ad-area" class="row no-gutters">

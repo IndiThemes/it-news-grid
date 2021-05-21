@@ -43,12 +43,12 @@ require_once get_template_directory() . '/framework/customizer/general.php';
 require_once get_template_directory() . '/framework/customizer/header.php';
 require_once get_template_directory() . '/framework/customizer/layouts.php';
 require_once get_template_directory() . '/framework/customizer/footer.php';
-require_once get_template_directory() . '/framework/customizer/social.php';
 require_once get_template_directory() . '/framework/customizer/colors.php';
 require_once get_template_directory() . '/framework/customizer/featured-areas.php';
 require_once get_template_directory() . '/framework/customizer/featured-category.php';
 require_once get_template_directory() . '/framework/customizer/featured-posts.php';
 require_once get_template_directory() . '/framework/customizer/misc.php';
+require_once get_template_directory() . '/framework/customizer/top-bar.php';
 
 /**
  * Render the site title for the selective refresh partial.
