@@ -9,7 +9,7 @@
 
 if ( ! defined( 'ITNG_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'ITNG_VERSION', '1.0.9' );
+	define( 'ITNG_VERSION', '1.0.10' );
 }
 
 if ( ! function_exists( 'itng_setup' ) ) :

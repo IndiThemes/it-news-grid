@@ -49,6 +49,7 @@ require_once get_template_directory() . '/framework/customizer/featured-category
 require_once get_template_directory() . '/framework/customizer/featured-posts.php';
 require_once get_template_directory() . '/framework/customizer/misc.php';
 require_once get_template_directory() . '/framework/customizer/top-bar.php';
+require_once get_template_directory() . '/framework/customizer/button-section.php';
 
 /**
  * Render the site title for the selective refresh partial.

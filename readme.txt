@@ -70,6 +70,10 @@ IT News Grid is a simple yet powerful grid based Blog WordPress Theme. With a cl
 = 1.0.9 =
 * Added Options for Top Bar
 
+= 1.0.10 =
+* Fixed the Logo size issue
+* Released IT News Grid Plus
+
 == Credits ==
 
 Image for theme screenshot, Credit Helena Lopes
