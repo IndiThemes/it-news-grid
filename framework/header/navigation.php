@@ -1,4 +1,3 @@
-<div id="site-navigation" class="main-navigation col-auto" role="navigation">
 <?php
 wp_nav_menu(
 	array(
@@ -7,4 +6,3 @@ wp_nav_menu(
 	)
 );
 ?>
-</div>

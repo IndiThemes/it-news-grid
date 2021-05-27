@@ -55,6 +55,15 @@ Just Install the Theme from the WordPress Repository.
 * 1.0.10
 	Fixed the Logo size issue
 	Released IT News Grid Plus
+	
+* 1.0.11
+	Fixed Navigation issue in Style 1
+	Added Citations to Images in Single Post Page
+	Other Minor Bug Fixes
+	
+* 1.0.12
+	Fixed the Navigation Error
+	
 
 
 Good luck!

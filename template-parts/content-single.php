@@ -30,7 +30,15 @@
 	
 	<div class="itng-single-thumb">
 		<?php if ( has_post_thumbnail() ): ?>
-			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full'); ?></a>
+			<figure>
+			
+				<?php the_post_thumbnail('full'); ?>
+				
+				<?php if ( !empty( get_theme_mod( 'itng_single_citation_enable', 1 ) ) ) : ?>
+					<figcaption class="itng-img-caption"><?php the_post_thumbnail_caption(); ?></figcaption>
+				<?php endif; ?>
+				
+			</figure>
 		<?php
 		else :
 		?>	<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ph_fp.png'); ?>"></a>

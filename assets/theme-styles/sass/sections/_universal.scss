@@ -16,7 +16,12 @@
 	@include transition(all 100ms ease-in-out);
 	&:hover, &:focus {
 		&:before {
-			@include darken( 0.1);
+			@include darken( 0.05 );
+		}
+	}
+	&:active {
+		&:before {
+			@include darken( 0.1 );
 		}
 	}
 }
@@ -137,7 +142,14 @@ pre, fieldset, input, textarea, table, table *, hr {
 }
 
 figcaption {
-	text-align: center;
+	background-color: #f1f1f1;
+	padding: 0.24em 0.4em;
+	font-size: 0.9em;
+	color: #666;
+	font-style: italic;
+	.wp-block-image & {
+		margin-top: 0;
+	}
 }
 
 th, td {

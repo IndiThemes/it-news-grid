@@ -84,14 +84,17 @@ function itng_get_masthead() {
 
 		<div class="nav-wrapper">
 			 <div class="container">
-				 <div class="row justify-content-end align-items-center no-gutters">
-					 <?php get_template_part('framework/header/navigation'); ?>
+				 <div class="row align-items-center no-gutters">
+					 
+					<div id="site-navigation" class="main-navigation col-lg-11" role="navigation">
+						<?php get_template_part('framework/header/navigation'); ?>
+					</div>
 					 
 					<button href="#menu" class="menu-link mobile-nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></button>
 					
 					<button type="button" id="go-to-field" tabindex="-1"></button>
-			    	<button id="search-btn"><i class="fa fa-search"></i></button>
-			    	 <?php do_action('itng_search'); ?>
+			    	<button id="search-btn" class="ml-auto col-auto"><i class="fa fa-search"></i></button>
+			    	<?php do_action('itng_search'); ?>
 			    	 
 				</div>
 			</div>
@@ -138,7 +141,9 @@ function itng_get_masthead() {
 		<div class="nav-wrapper">
 			 <div class="container">
 				 <div class="row no-gutters align-items-center justify-content-between">
-					 <?php get_template_part('framework/header/navigation'); ?>
+					 <div id="site-navigation" class="main-navigation col-auto" role="navigation">
+					 	<?php get_template_part('framework/header/navigation'); ?>
+					 </div>
 					 
 					<button href="#menu" class="menu-link mobile-nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></button>
 					

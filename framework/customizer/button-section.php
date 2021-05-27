@@ -89,7 +89,7 @@ if ( class_exists( WP_Customize_Section ) ) {
 					{{ data.title }}
 	
 					<# if ( data.button_text && data.button_url ) { #>
-						<a href="{{ data.button_url }}" class="button button-secondary alignright" target="_blank" rel="external nofollow noopener noreferrer">{{ data.button_text }}</a>
+						<a href="{{ data.button_url }}" class="button button-primary alignright" target="_blank" rel="external nofollow noopener noreferrer">{{ data.button_text }}</a>
 					<# } #>
 				</h3>
 			</li>

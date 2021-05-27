@@ -203,6 +203,22 @@ function itng_sidebr_customize_register( $wp_customize ) {
             }
         };
     }
+    
+    $wp_customize->add_setting(
+		"itng_single_citation_enable", array(
+			"default"			=>	1,
+			"sanitize_callback"	=>	"itng_sanitize_checkbox"
+		)
+	);
+	
+	$wp_customize->add_control(
+		"itng_single_citation_enable", array(
+			"label"		=>	esc_html__("Enable Image Citations in Posts", 'it-news-grid'),
+			"type"		=>	"checkbox",
+			"section"	=>	"itng_single",
+			"priority"	=>	15
+		)
+	);
    
    $wp_customize->add_setting(
 		"itng_single_navigation_enable", array(

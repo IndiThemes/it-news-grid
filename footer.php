@@ -47,13 +47,13 @@
 	<div class="nav-wrapper">
 		 <div class="container">
 			 <div class="row justify-content-end align-items-center justify-content-between no-gutters">
-				 <?php get_template_part('framework/header/navigation'); ?>
+				<div class="main-navigation col-lg-11" role="navigation">
+					<?php get_template_part('framework/header/navigation'); ?>
+				</div>
 				 
 				<button href="#menu" class="menu-link mobile-nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></button>
 				
 				<button type="button" id="go-to-field" tabindex="-1"></button>
-		    	<button id="search-btn"><i class="fa fa-search"></i></button>
-		    	 <?php do_action('itng_search'); ?>
 		    	 
 			</div>
 		</div>

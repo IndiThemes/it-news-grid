@@ -22,7 +22,7 @@ jQuery(document).ready(function() {
 			
 		} else {
 			searchField.focus()
-			searchArea.style.height = '100%'
+			searchArea.style.height = '60px'
 			searchArea.style.opacity = '1'
 			searchBtn.classList.add('is-toggled')
 			goToBtn.tabIndex = '0'
