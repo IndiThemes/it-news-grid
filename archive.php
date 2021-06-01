@@ -35,11 +35,11 @@ get_header(NULL, ['layout'	=>	'container', 'header' => 'archive']);
 
 			endwhile;
 
-			the_posts_pagination( array(
+			the_posts_pagination( apply_filters( 'itng_posts_pagination_args', array(
 				'class'	=>	'itng-pagination',
 				'prev_text'	=> '<i class="fa fa-angle-left"></i>',
 				'next_text'	=> '<i class="fa fa-angle-right"></i>'
-			) );
+			) ) );
 
 		else :
 

@@ -64,7 +64,13 @@ body.single {
 			padding: 0.8em 1.2em;
 			margin-bottom: 2em;
 			font-style: italic;
+			overflow: hidden;
+			& > * {
+				display: inline-block;
+				max-width: 50%;
+			}
 			.nav-previous {
+				float: left;
 				display: flex;
 				flex-direction: column;
 				&:before {
@@ -75,6 +81,7 @@ body.single {
 				}
 			}
 			.nav-next {
+				float: right;
 				display: flex;
 				flex-direction: column;
 				&:before {

@@ -64,6 +64,8 @@ Just Install the Theme from the WordPress Repository.
 * 1.0.12
 	Fixed the Navigation Error
 	
-
+* v1.0.13
+	Made the theme pluggable
+	Improved the Navigation UI
 
 Good luck!

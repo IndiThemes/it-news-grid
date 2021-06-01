@@ -3,8 +3,8 @@ Theme Name: IT News Grid
 Theme URI: https://indithemes.com/product/it-news-grid/
 Author: IndiThemes
 Author URI: https://wwww.indithemes.com
-Description: IT News Grid is a simple yet powerful grid based Blog WordPress Theme. With a clean and sophisticated layout which adapts to any device of your liking along with support for page builders, you can create the website you always wanted. Theme supports multiple header layouts, multiple content layout options, custom widgets, a flexible footer layout, all in all, a highly customizable WordPress Theme that would take your site up a notch, all this being very light weight.
-Version: 1.0.12
+Description: IT News Grid is a simple yet powerful grid based Blog WordPress Theme. With a clean and sophisticated layout which adapts to any device of your liking along with support for page builders, you can create the website you always wanted. Theme supports multiple header layouts, multiple content layout options, custom widgets, a flexible footer layout, all in all, a highly customizable WordPress Theme that would take your site up a notch, all this being very light weight. The theme is highly pluggable. This support for Child Themes add to the flexibility of the theme. Create child themes as per your custom requirements.
+Version: 1.0.13
 Tested up to: 5.7.1
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -618,7 +618,6 @@ textarea {
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
 	position: absolute;
 	top: 100%;
@@ -674,12 +673,6 @@ textarea {
 .site-main
 .post-navigation {
 	margin: 0 0 1.5em;
-}
-
-.comment-navigation .nav-links,
-.posts-navigation .nav-links,
-.post-navigation .nav-links {
-	display: flex;
 }
 
 .comment-navigation .nav-previous,

@@ -9,7 +9,7 @@
 
 if ( ! defined( 'ITNG_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'ITNG_VERSION', '1.0.10' );
+	define( 'ITNG_VERSION', '1.0.13' );
 }
 
 if ( ! function_exists( 'itng_setup' ) ) :
@@ -100,12 +100,14 @@ if ( ! function_exists( 'itng_setup' ) ) :
 		 */
 		add_theme_support(
 			'custom-logo',
-			array(
-				'height'      => 60,
-				'width'       => 240,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
+			apply_filters(
+				'itng_custom_logo_args', array(
+					'height'      => 60,
+					'width'       => 240,
+					'flex-width'  => true,
+					'flex-height' => true,
+				)
+			) 
 		);
 	}
 endif;

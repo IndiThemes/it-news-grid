@@ -434,19 +434,19 @@ span.ripple {
     margin: 0;
     float: left;
   }
-  .main-navigation ul#menu-desktop > li.menu-item-has-children > a:after, .main-navigation ul#menu-desktop > li.page-item-has-children > a:after {
+  .main-navigation ul#menu-desktop > li.menu-item-has-children > a:after, .main-navigation ul#menu-desktop > li.page_item_has_children > a:after {
     position: relative;
     content: "";
     font-family: "FontAwesome";
-    padding-left: 3px;
+    padding-left: 10px;
   }
   .main-navigation ul#menu-desktop > li > a {
     padding-top: 1.2em;
     padding-bottom: 1.2em;
     color: white;
   }
-  .main-navigation ul#menu-desktop > li > a:hover {
-    background-color: rgba(0, 0, 0, 0.08);
+  .main-navigation ul#menu-desktop li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
   }
   .main-navigation ul#menu-desktop ul {
     flex-direction: column;
@@ -468,7 +468,6 @@ span.ripple {
     -moz-transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 300ms cubic-bezier(0, 0, 0.2, 1);
     -ms-transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 300ms cubic-bezier(0, 0, 0.2, 1);
     -o-transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1), transform 300ms cubic-bezier(0, 0, 0.2, 1);
-    box-shadow: none;
     font-weight: 400;
   }
   .main-navigation ul#menu-desktop ul li {
@@ -476,11 +475,11 @@ span.ripple {
     display: block;
     position: relative;
     margin: 0;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    border-top: solid 1px rgba(255, 255, 255, 0.1);
+    border-left: solid 1px rgba(255, 255, 255, 0.1);
   }
-  .main-navigation ul#menu-desktop ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.08);
-  }
-  .main-navigation ul#menu-desktop ul li.menu-item-has-children > a:after, .main-navigation ul#menu-desktop ul li.page-item-has-children > a:after {
+  .main-navigation ul#menu-desktop ul li.menu-item-has-children > a:after, .main-navigation ul#menu-desktop ul li.page_item_has_children > a:after {
     position: relative;
     content: "";
     font-family: "FontAwesome";
@@ -903,8 +902,14 @@ body.single #primary .nav-links {
   padding: 0.8em 1.2em;
   margin-bottom: 2em;
   font-style: italic;
+  overflow: hidden;
+}
+body.single #primary .nav-links > * {
+  display: inline-block;
+  max-width: 50%;
 }
 body.single #primary .nav-links .nav-previous {
+  float: left;
   display: flex;
   flex-direction: column;
 }
@@ -915,6 +920,7 @@ body.single #primary .nav-links .nav-previous:before {
   color: #bbb;
 }
 body.single #primary .nav-links .nav-next {
+  float: right;
   display: flex;
   flex-direction: column;
 }
@@ -1299,7 +1305,7 @@ article.itng-blog .entry-footer {
   top: 0;
   left: 0;
   padding: 0.4em 0.8em;
-  color: #777;
+  color: #000;
   background-color: rgba(255, 255, 255, 0.76);
 }
 #itng-featured-posts h2 {

@@ -21,11 +21,10 @@ get_header();
 			if ( get_theme_mod('itng_single_navigation_enable') !== "" ) :
 				
 				the_post_navigation(
-					array(
+					apply_filters( 'itng_single_post_navigation_args', array(
 						'prev_text' => __('%title', 'it-news-grid'),
 						'next_text' => __('%title', 'it-news-grid'),
-					)
-				);
+					) ) );
 			endif;
 			
 			if ( get_theme_mod('itng_single_related_enable', 1) !== "" ) :

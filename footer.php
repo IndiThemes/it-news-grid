@@ -34,11 +34,11 @@
 		<button id="close-menu" class="menu-link"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
 	</div>
 	
-	<?php wp_nav_menu( array( 'menu_id'        => 'menu-main',
+	<?php wp_nav_menu( apply_filters( 'mobile_nav_args', array( 'menu_id'        => 'menu-main',
 							  'container'		=> 'ul',
 	                          'theme_location' => 'menu-1',
 	                          'walker'         => has_nav_menu('menu-1') ? new itng_Mobile_Menu : '',
-	                     ) ); ?>
+	                     ) ) ); ?>
 	                     
 	<button class="go-to-top"></button>
 </nav>
@@ -46,8 +46,14 @@
 <div id="sticky-navigation">
 	<div class="nav-wrapper">
 		 <div class="container">
+	    	
 			 <div class="row justify-content-end align-items-center justify-content-between no-gutters">
-				<div class="main-navigation col-lg-11" role="navigation">
+				 
+				 <div class="site-branding col-auto">
+					<?php do_action('itng_get_branding'); ?>
+		    	</div>
+		    	
+				<div class="main-navigation col-lg-9" role="navigation">
 					<?php get_template_part('framework/header/navigation'); ?>
 				</div>
 				 
