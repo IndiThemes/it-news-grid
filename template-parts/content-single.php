@@ -28,8 +28,8 @@
 		</div><!-- .entry-meta -->
 	<?php endif; ?>
 	
-	<div class="itng-single-thumb">
-		<?php if ( has_post_thumbnail() ): ?>
+	<?php if ( has_post_thumbnail() && !empty( get_theme_mod( 'itng_single_featured_enable', 1 ) ) ): ?>
+		<div class="itng-single-thumb">
 			<figure>
 			
 				<?php the_post_thumbnail('full'); ?>
@@ -39,11 +39,8 @@
 				<?php endif; ?>
 				
 			</figure>
-		<?php
-		else :
-		?>	<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ph_fp.png'); ?>"></a>
-		<?php endif; ?>
-	</div>
+		</div>
+	<?php endif; ?>
 
 	<div class="entry-content">
 		<?php

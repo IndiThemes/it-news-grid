@@ -23,9 +23,6 @@
 			<div class="itng-thumb">
 				<?php if ( has_post_thumbnail() ): ?>
 					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('itng_blog_thumb'); ?></a>
-				<?php
-				else :
-				?>	<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ph_blog.png'); ?>"></a>
 				<?php endif; ?>
 			</div>
 			

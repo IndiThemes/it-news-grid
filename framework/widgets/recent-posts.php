@@ -45,7 +45,7 @@ class itng_recent_posts extends WP_Widget {
 						<div class="itng-widget-posts">
 						<?php
 		            		while ($widget_query->have_posts() ) : $widget_query->the_post(); ?>
-			            		<div class=" itng-widget-post row no-gutters">
+			            		<div class=" itng-widget-post row no-gutters align-items-center">
 				            		<div class="itng-widget-post-thumb col-4">
 					            		<?php if ( has_post_thumbnail() ): ?>
 											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('itng_list_thumb'); ?></a>

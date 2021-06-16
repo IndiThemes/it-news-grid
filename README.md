@@ -67,5 +67,10 @@ Just Install the Theme from the WordPress Repository.
 * v1.0.13
 	Made the theme pluggable
 	Improved the Navigation UI
+	
+* v1.0.14
+	Removed default Featured Image from blogs
+	Fixed Archive and Search Page title headings
+	Other minor bug fixes
 
 Good luck!

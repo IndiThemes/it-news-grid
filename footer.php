@@ -48,10 +48,7 @@
 		 <div class="container">
 	    	
 			 <div class="row justify-content-end align-items-center justify-content-between no-gutters">
-				 
-				 <div class="site-branding col-auto">
-					<?php do_action('itng_get_branding'); ?>
-		    	</div>
+				
 		    	
 				<div class="main-navigation col-lg-9" role="navigation">
 					<?php get_template_part('framework/header/navigation'); ?>

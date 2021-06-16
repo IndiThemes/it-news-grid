@@ -217,6 +217,13 @@ q {
 
 .page-header {
 	width: 100%;
+	margin-bottom: 0.8em;
+	.page-title {
+		font-weight: 400;
+	}
+	span {
+		font-weight: 700;
+	}
 }
 
 .page-content, .entry-content, .entry-summary {
