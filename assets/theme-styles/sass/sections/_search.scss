@@ -2,14 +2,15 @@
  *	Style for the search Functionality
  */
  
-#itng-search {
+[class^="itng-search"] {
 	position: absolute;
 	right: 0;
-	bottom: 100%;
+	top: 100%;
 	height: 0;
 	opacity: 0;
 	overflow: hidden;
 	@include transition(all 100ms ease-in-out);
+	z-index: 999;
 	form {
 		height: 100%;
 		background-color: $primary;
@@ -20,6 +21,7 @@
 			align-items: center;
 			margin: 0;
 			input[type="text"] {
+				position: relative;
 				height: 100%;
 				background-color: rgba(0,0,0,.14);
 				padding: 0.5em;

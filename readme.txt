@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Requires at least: 5.5
 Tested up to: 5.7
 Requires PHP: 5.6
-Stable tag: 1.0.14
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,22 @@ IT News Grid is a simple yet powerful grid based Blog WordPress Theme. With a cl
 * Removed default Featured Image from blogs
 * Fixed Archive and Search Page title headings
 * Other minor bug fixes
+
+= 1.1 =
+* Introduced a new Featured News Section
+
+= 1.1.1 =
+* Added the LinkedIn icon
+* Removed unused CSS
+
+= v1.1.2 =
+* Fixed a Bug in Footer
+* Other Minor Bug fixes
+
+= v1.1.3 =
+* Improved Navigation
+* Other Bug Fixes
+* Changed Screenshot
 
 == Credits ==
 

@@ -4,13 +4,17 @@
  
 jQuery(document).ready(function() {
 	
-	const searchArea	=	document.getElementById('itng-search'),
-			searchBtn	=	document.getElementById('search-btn'),
-			searchField	=	document.querySelector('.search-field'),
-			goToBtn		=	document.querySelector('#go-to-btn'),
-			goToField	=	document.querySelector('#go-to-field')
-	 		
-	const toggleSearch = () => {
+	
+	const	toggleSearchFunction	=	element	=>	{
+		
+		const 	searchBtn	=	element,	
+				searchArea	=	searchBtn.nextElementSibling,
+				searchField	=	searchArea.getElementsByTagName('input')[0],
+				goToBtn		=	searchField.nextElementSibling,
+				goToField	=	searchBtn.previousElementSibling
+		 		
+		 		console.log( goToField )
+		 		
 		if ( searchBtn.classList.contains('is-toggled') ) {
 			searchBtn.focus()
 			searchArea.style.height = '0'
@@ -29,20 +33,30 @@ jQuery(document).ready(function() {
 			searchField.tabIndex = '0'
 			goToField.tabIndex = '0'
 		}
+		
+		goToBtn.addEventListener('focus', () => {
+			searchBtn.focus()
+		})
+		 
+		goToField.addEventListener('focus', () => {
+			searchField.focus()
+		})
+	
 	}
 		
-	searchBtn.addEventListener('click', () => {
-		toggleSearch()
-		//searchField.focus()
+	document.querySelector('.search-btn-main').addEventListener('click', function() {
+		toggleSearchFunction( this )
 	})
 	
-	 goToBtn.addEventListener('focus', () => {
-		 searchBtn.focus()
-	 })
-	 
-	 goToField.addEventListener('focus', () => {
-		 searchField.focus()
-	 })
+	document.querySelector('.search-btn-sticky').addEventListener('click', function() {
+		toggleSearchFunction( this )
+	})
+	
+/*
+	document.querySelector('.search-btn-sticky').addEventListener('click', () => {
+		toggleSearchFunction()
+	})
+*/	
 /*
 	var	searchLabel = jQuery('#search-screen'),
 		searchInput	 = jQuery('.top_search_field'),
@@ -117,7 +131,7 @@ jQuery(document).ready(function() {
 	
 	
 	// Magnific Popup Lightbox
-	jQuery('.blocks-gallery-grid, .gallery').magnificPopup({
+	jQuery('.blocks-gallery-grid, .gallery').magnificPopup( {
 		delegate: 'a',
 		type: 'image',
 		gallery: {
@@ -143,6 +157,14 @@ jQuery(document).ready(function() {
 		    dots: false,
 		    nav: true
 	    });
+    });
+    
+    jQuery('.itng-featured-news-slider').owlCarousel({
+	   items: 1,
+	   dots: false,
+	   nav: false,
+	   loop: true,
+	   autoplay: true
     });
 	
 	

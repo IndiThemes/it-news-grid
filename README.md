@@ -73,4 +73,20 @@ Just Install the Theme from the WordPress Repository.
 	Fixed Archive and Search Page title headings
 	Other minor bug fixes
 
+* v1.1
+	Introduced a new Featured News Section
+	
+* v1.1.1
+	Added LinkedIn icon
+	Removed unused CSS
+	
+* v1.1.2
+	Fixed a Bug in Footer
+	Other Minor Bug fixes
+	
+* v1.1.3
+	Improved Navigation
+	Other Bug Fixes
+	Changed Screenshot
+
 Good luck!

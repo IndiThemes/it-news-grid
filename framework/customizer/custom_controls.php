@@ -159,7 +159,7 @@
                 array(
                     'name'              => '_customize-dropdown-categories-' . $this->id,
                     'echo'              => 0,
-                    'show_option_none'  => __( '&mdash; Select &mdash;', 'it-news-grid' ),
+                    'show_option_none'  => __( 'All', 'it-news-grid' ),
                     'option_none_value' => '0',
                     'selected'          => $this->value(),
                 )
@@ -272,5 +272,17 @@
 		    </label>
 		    <?php
 	    }
+    }
+    
+    class itng_Separator_Control extends WP_Customize_Control {
+	    
+	    public $type = "itng-separator";
+	    
+	    public function render_content() { ?>
+	    		<br>
+		    	<hr>
+		    	<br>
+		<?php
+		}
     }
 }

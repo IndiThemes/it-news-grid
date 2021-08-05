@@ -57,6 +57,9 @@
 				<button href="#menu" class="menu-link mobile-nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></button>
 				
 				<button type="button" id="go-to-field" tabindex="-1"></button>
+				
+				<button class="search-btn-sticky ml-auto col-auto"><i class="fa fa-search"></i></button>
+				<?php do_action('itng_search', 'sticky'); ?>
 		    	 
 			</div>
 		</div>

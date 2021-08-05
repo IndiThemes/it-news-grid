@@ -7,6 +7,10 @@
 .nav-wrapper {
 	position: relative;
 	background-color: $primary;
+	padding: 0.5em 0;
+	@media (min-width: 992px) {
+		padding: 0;
+	}
 	& > * {
 		position: relative;
 	}
@@ -15,8 +19,6 @@
 		border: 0;
 		font-size: 1.5em;
 		color: white;
-		margin: 0.5em 0;
-		padding: 0;
 	}
 }
 

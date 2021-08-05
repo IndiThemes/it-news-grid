@@ -277,7 +277,7 @@ add_action('itng_after_content', 'itng_get_after_content');
 /**
  *	Function for footer section
  */
- if ( function_exists('itng_get_footer') ) {
+ if ( !function_exists('itng_get_footer') ) {
 	 function itng_get_footer() {
 		 
 		$path 	=	'/framework/footer/footer';
@@ -373,6 +373,8 @@ if ( !function_exists('itng_featured_category') ) {
 					<?php
 					while ( $cat_query->have_posts() ) : $cat_query->the_post(); ?>
 					
+						<?php global $post; ?>
+						
 						<div class="featured-cat-thumb-wrapper col-md-6 col-lg-3">
 							<div class="featured-cat-thumb">
 								<a href="<?php esc_url( the_permalink() ); ?>">
@@ -485,3 +487,218 @@ if ( !function_exists('itng_featured_posts') ) {
 	}
 }
 add_action('itng_before_content', 'itng_featured_posts', 10);
+
+/**
+ *
+ *	Featured News Section
+ *
+ */
+function itng_featured_news_section() {
+
+	if 	( is_front_page() && get_theme_mod( 'itng-featured-news-front-enable' )
+		|| !is_front_page() && is_home() && get_theme_mod( 'itng-featured-news-blog-enable' ) ) {
+	?>
+	<div id="itng-featured-news">
+		<div class="row no-gutters">
+			
+			<!-- Slider Section -->
+			<div id="itng-news-slider-container" class="col-xl-6">
+				<?php if ( get_theme_mod('itng-featured-news-slider-title', 'Trending') ) { ?>
+				<h2 class="featured-news-slider-title"><?php echo esc_html( get_theme_mod('itng-featured-news-slider-title', 'Featured News') ); ?></h2>
+				<?php } ?>
+				<div class="itng-featured-news-slider owl-carousel">
+				<?php
+					$cat	=	get_theme_mod( 'itng-featured-news-slider', 0 );
+					$count	=	get_theme_mod( 'itng-featured-news-slider-count', 3 );
+					
+					$args = array(
+						'ignore_sticky_posts'	=>	true,
+						'cat'					=>	$cat,
+						'posts_per_page'		=>	$count,
+					);
+					
+					$slider_query	=	new WP_Query( $args );
+					
+					// The Loop
+					if ( $slider_query->have_posts() ) :
+					while ( $slider_query->have_posts() ) : $slider_query->the_post();
+					
+						global $post;
+						?>
+						
+						<div class="slider-post-wrapper">
+							
+							<div class="slider-post">
+								<?php
+									if ( has_post_thumbnail() ) {
+										the_post_thumbnail( 'large' );
+									}
+									else { ?>
+										<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ph_fp.png'); ?>" alt="<?php the_title_attribute(); ?>">
+									<?php
+									} 
+								?>
+								
+								
+							</div>
+							
+							<div class="itng-slider-post-meta">
+								<?php itng_posted_on(); ?>
+								<a href="<?php esc_url( the_permalink() ); ?>"><?php the_title( '<h3 class="slider-post-title">', '</h3>', true ); ?></a>
+								<div class="slider-post-cats">
+									
+								</div>
+							</div>
+						</div>
+					<?php
+					endwhile;
+					endif;
+					
+					// Reset Post Data
+					wp_reset_postdata();
+				?>
+				</div>
+			</div>
+			
+<!-- 			Thumbs Section. Class nomenclature is messed up -->
+			<div id="itng-featured-news-list-container" class="col-xl-3">
+				<?php if ( get_theme_mod('itng-featured-news-list-title', 'Trending') ) { ?>
+				<h2 class="featured-news-list-title"><?php echo esc_html( get_theme_mod('itng-featured-news-list-title', 'Most Popular') ); ?></h2>
+				<?php } ?>
+				<div class="featured-news-list row no-gutters">
+					<?php
+						$list_cat	=	get_theme_mod('itng-featured-news-list');
+							
+						$args = array(
+							'posts_per_page'		=>	2,
+							'ignore_sticky_posts'	=>	true,
+							'cat'					=>	$cat,
+						);
+						
+						$list_query = new WP_Query( $args );
+
+						if ( $list_query->have_posts() ) :
+						while ( $list_query->have_posts() ) : $list_query->the_post();
+						
+							global $post;
+							
+							?>
+								<div class="itng-featured-post-list col-6 col-xl-12">
+									
+									<div class="featured-post-list-wrapper">
+										
+										<div class="featured-news-list-thumb">
+											<a href="<?php esc_url( the_permalink() ) ?>">
+												<?php
+													if ( has_post_thumbnail() ) {
+														the_post_thumbnail( 'itng_square_thumb' );
+													} else { ?>
+														<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ph_square.png'); ?>" alt="<?php the_title_attribute(); ?>">
+													<?php
+													}
+												?>
+											</a>
+										</div>
+										
+										<div class="featured-news-list-content">
+											
+											<?php itng_posted_on(); ?>
+											
+											<a href="<?php the_permalink(); ?>">
+												<?php the_title( '<h3 class="featured-news-list-title">', '</h3>' ); ?>
+											</a>
+											
+											<div class="itng-news-list-cats">
+												<?php
+													$cats = get_the_category();
+													
+													foreach ( $cats as $cat ) { ?>
+														<a href="<?php echo get_category_link( $cat->term_id) ?>"><?php echo $cat->name ?></a>
+													<?php	
+													}
+												?>
+											</div>
+										</div>
+										
+									</div>
+									
+								</div>
+							<?php
+						endwhile;
+						endif;
+						
+						// Reset Post Data
+						wp_reset_postdata();
+					?>
+				</div>
+			</div>
+			
+<!-- 			List Section -->
+			<div id="itng-featured-news-carousel-container" class="col-xl-3">
+				
+				<?php if ( get_theme_mod('itng-featured-news-car-title', 'Trending') ) { ?>
+					<h2 class="featured-news-car-title"><?php echo esc_html( get_theme_mod('itng-featured-news-car-title', 'Trending') ); ?></h2>
+				<?php } ?>
+				
+				<div class="news-carousel row no-gutters">
+					<?php
+					$car_cat	=	get_theme_mod('itng-featured-news-carousel');
+					
+						
+						$args = array(
+							'posts_per_page'		=>	4,
+							'ignore_sticky_posts'	=>	true,
+							'cat'					=>	$car_cat,
+						);
+						
+						$car_query = new WP_Query( $args );
+
+						if ( $car_query->have_posts() ) :
+						while ( $car_query->have_posts() ) : $car_query->the_post();
+						
+							global $post;
+							
+							?>
+								<div class="itng-featured-post-car col-12 col-md-6 col-xl-12">
+									
+									<div class="featured-post-car-wrapper row no-gutters align-items-center">
+										
+										<div class="featured-news-car-thumb col-4">
+											<a href="<?php esc_url( the_permalink() ) ?>">
+												<?php
+													if ( has_post_thumbnail() ) {
+														the_post_thumbnail( 'thumbnail' );
+													} else { ?>
+														<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ph_square.png'); ?>" alt="<?php the_title_attribute(); ?>">
+													<?php
+													}
+												?>
+											</a>
+										</div>
+										
+										<div class="featured-news-car-content col-8">
+											<a href="<?php the_permalink(); ?>">
+												<?php the_title( '<h3 class="featured-car-list-title">', '</h3>' ); ?>
+											</a>
+											
+											<?php itng_posted_on(); ?>
+										</div>
+										
+									</div>
+									
+								</div>
+							<?php
+						endwhile;
+						endif;
+						
+						// Reset Post Data
+						wp_reset_postdata();
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php
+	}
+}
+add_action('itng_before_content', 'itng_featured_news_section', 8);

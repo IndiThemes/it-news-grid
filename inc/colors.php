@@ -14,10 +14,12 @@ function itng_custom_colors() {
 	'ins,
 	.nav-wrapper,
 	#menu,
-	#itng-search form,
 	#site-navigation ul#menu-desktop ul,
+	#itng-featured-news .slider-post-wrapper .posted-on a,
+	#itng-featured-news #itng-featured-news-list-container .posted-on a,
+	#itng-featured-posts .itng-featured-post-date,
 	#colophon,
-	#itng-featured-posts h2,
+	[class^=itng-search] form,
 	#itng-featured-cat .featured-cat-thumb h2
 	{background-color: ' . $primary_color . '}';
 	
@@ -26,6 +28,8 @@ function itng_custom_colors() {
 	'article .entry-meta a,
 	article .blog-footer a,
 	.nav-links a,
+	.widget ul li a,
+	#itng-featured-news #itng-featured-news-carousel-container .posted-on a,
 	.itng-pagination .nav-links > a
 	{color: ' . $primary_color . ' !important}';
 	

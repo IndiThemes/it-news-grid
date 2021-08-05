@@ -46,6 +46,7 @@ require_once get_template_directory() . '/framework/customizer/footer.php';
 require_once get_template_directory() . '/framework/customizer/colors.php';
 require_once get_template_directory() . '/framework/customizer/featured-areas.php';
 require_once get_template_directory() . '/framework/customizer/featured-category.php';
+require_once get_template_directory() . '/framework/customizer/featured-news.php';
 require_once get_template_directory() . '/framework/customizer/featured-posts.php';
 require_once get_template_directory() . '/framework/customizer/misc.php';
 require_once get_template_directory() . '/framework/customizer/top-bar.php';

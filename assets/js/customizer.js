@@ -19,13 +19,6 @@
 			$( '.site-description' ).text( to );
 		} );
 	} );
-	
-	wp.customize( 'background_color', function( value ) {
-		value.bind( function( themeColor ) {
-				$( '.itng-content-svg path' ).css( 'fill', themeColor ) ;
-				$( '#colophon' ).css( 'color', themeColor );
-		} );
-	} );
 
 	// Header text color.
 	wp.customize( 'header_textcolor', function( value ) {

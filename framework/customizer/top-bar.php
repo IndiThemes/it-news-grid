@@ -44,6 +44,7 @@ function itng_customize_register_social( $wp_customize ) {
 					'facebook-f' 	=> esc_html__('Facebook', 'it-news-grid'),
 					'twitter' 		=> esc_html__('Twitter', 'it-news-grid'),
 					'instagram' 	=> esc_html__('Instagram', 'it-news-grid'),
+					'linkedin'		=> esc_html__('LinkedIn', 'it-news-grid'),
 					'rss' 			=> esc_html__('RSS Feeds', 'it-news-grid'),
 					'pinterest-p' 	=> esc_html__('Pinterest', 'it-news-grid'),
 					'vimeo' 		=> esc_html__('Vimeo', 'it-news-grid'),
@@ -60,7 +61,7 @@ function itng_customize_register_social( $wp_customize ) {
 			'itng_social_'.$x, array(
 				'sanitize_callback' => 'itng_sanitize_social',
 				'default' 			=> 'none',
-				'transport'			=> 'postMessage'
+				'sanitize_callback'	=>	'itng_sanitize_social'
 			));
 
 		$wp_customize->add_control( 'itng_social_' . $x, array(
@@ -96,6 +97,7 @@ function itng_sanitize_social( $input ) {
 				'facebook-f',
 				'twitter',
 				'instagram',
+				'linkedin',
 				'rss',
 				'pinterest-p',
 				'vimeo',

@@ -9,6 +9,7 @@
 		'facebook-f' 	=> 'Facebook',
 		'twitter' 		=> 'Twitter',
 		'instagram' 	=> 'Instagram',
+		'linkedin'		=> 'LinkedIn',
 		'rss' 			=> 'RSS Feeds',
 		'pinterest-p' 	=> 'Pinterest',
 		'vimeo' 		=> 'Vimeo',

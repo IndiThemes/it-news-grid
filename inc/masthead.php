@@ -4,13 +4,13 @@
  *	Search Form
  */
 if ( !function_exists('itng_get_search') ) {
-	function itng_get_search() {
+	function itng_get_search( $class ) {
 	
-		get_template_part('framework/header/search');
+		get_template_part('framework/header/search', '', $class);
 		
 	}
 }
- add_action('itng_search', 'itng_get_search');
+ add_action('itng_search', 'itng_get_search', 10, 1);
 
 
 /**
@@ -98,7 +98,7 @@ if ( !function_exists('itng_get_masthead') ) {
 	
 			<div class="nav-wrapper">
 				 <div class="container">
-					 <div class="row align-items-center no-gutters">
+					 <div class="d-flex align-items-center">
 						 
 						<div id="site-navigation" class="main-navigation col-lg-11" role="navigation">
 							<?php get_template_part('framework/header/navigation'); ?>
@@ -107,8 +107,8 @@ if ( !function_exists('itng_get_masthead') ) {
 						<button href="#menu" class="menu-link mobile-nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></button>
 						
 						<button type="button" id="go-to-field" tabindex="-1"></button>
-				    	<button id="search-btn" class="ml-auto col-auto"><i class="fa fa-search"></i></button>
-				    	<?php do_action('itng_search'); ?>
+				    	<button class="search-btn-main ml-auto col-auto"><i class="fa fa-search"></i></button>
+				    	<?php do_action('itng_search', 'main'); ?>
 				    	 
 					</div>
 				</div>
@@ -125,7 +125,7 @@ if ( !function_exists('itng_get_masthead') ) {
 		    <?php if ( !empty( get_theme_mod( 'itng_top_bar_enable', 1) ) ) : ?>
 		    <div id="itng-top-bar">
 			    <div class="container">
-				    <div class="row align-items-center">
+				    <div class="d-flex align-items-center">
 				    	<?php do_action('itng_top_bar_area'); ?>
 				    </div>
 			    </div>
@@ -154,7 +154,7 @@ if ( !function_exists('itng_get_masthead') ) {
 		    
 			<div class="nav-wrapper">
 				 <div class="container">
-					 <div class="row no-gutters align-items-center justify-content-between">
+					 <div class="d-flex align-items-center">
 						 <div id="site-navigation" class="main-navigation col-auto" role="navigation">
 						 	<?php get_template_part('framework/header/navigation'); ?>
 						 </div>
@@ -162,8 +162,8 @@ if ( !function_exists('itng_get_masthead') ) {
 						<button href="#menu" class="menu-link mobile-nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></button>
 						
 						<button type="button" id="go-to-field" tabindex="-1"></button>
-				    	<button id="search-btn" class="col-auto"><i class="fa fa-search"></i></button>
-				    	 <?php do_action('itng_search'); ?>
+				    	<button class="search-btn-main col-auto"><i class="fa fa-search"></i></button>
+				    	 <?php do_action('itng_search', 'main'); ?>
 				    	 
 					</div>
 				</div>
@@ -190,8 +190,8 @@ if ( !function_exists('itng_get_masthead') ) {
 						<button id="mobile-nav-btn" class="menu-link mobile-nav-btn"><i class="fa fa-bars" aria-hidden="true"></i></button>
 						
 						<button type="button" id="go-to-field" tabindex="-1"></button>
-				    	<button id="search-btn"><i class="fa fa-search"></i></button>
-				    	 <?php do_action('itng_search'); ?>
+				    	<button class="search-btn-main"><i class="fa fa-search"></i></button>
+				    	 <?php do_action('itng_search', 'main'); ?>
 				    	 
 					</div>
 				</div>
