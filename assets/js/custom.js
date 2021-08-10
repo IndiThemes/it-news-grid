@@ -10,7 +10,7 @@ jQuery(document).ready(function() {
 		const 	searchBtn	=	element,	
 				searchArea	=	searchBtn.nextElementSibling,
 				searchField	=	searchArea.getElementsByTagName('input')[0],
-				goToBtn		=	searchField.nextElementSibling,
+				goToBtn		=	searchArea.getElementsByTagName('button')[0],
 				goToField	=	searchBtn.previousElementSibling
 		 		
 		 		console.log( goToField )

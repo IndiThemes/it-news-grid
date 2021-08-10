@@ -4,7 +4,7 @@
  * Section with Button
  */
  
-if ( class_exists( WP_Customize_Section ) ) {
+if ( class_exists( 'WP_Customize_Section' ) ) {
  
 	class Button extends WP_Customize_Section {
 	
@@ -15,7 +15,7 @@ if ( class_exists( WP_Customize_Section ) ) {
 		 * @access public
 		 * @var    string
 		 */
-		public $type = 'wptrt-button';
+		public $type = 'itng-button';
 	
 		/**
 		 * Custom button text to output.

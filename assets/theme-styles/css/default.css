@@ -380,7 +380,7 @@ q {
   align-items: center;
   margin: 0;
 }
-[class^=itng-search] form label input[type=text] {
+[class^=itng-search] form label input[type=search] {
   position: relative;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.14);
@@ -389,8 +389,14 @@ q {
   color: white;
   font-weight: 700;
 }
-[class^=itng-search] form label input[type=text]::placeholder {
+[class^=itng-search] form label input[type=search]::placeholder {
   color: rgba(255, 255, 255, 0.4);
+}
+[class^=itng-search] form label input[type=search]:focus-visible {
+  outline: none;
+}
+[class^=itng-search] form input[type=submit] {
+  display: none;
 }
 @keyframes ripple {
   to {
