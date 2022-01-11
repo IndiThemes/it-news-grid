@@ -9,7 +9,7 @@
 
 if ( ! defined( 'ITNG_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'ITNG_VERSION', '1.0.14' );
+	define( 'ITNG_VERSION', '1.1.7' );
 }
 
 if ( ! function_exists( 'itng_setup' ) ) :
@@ -72,7 +72,7 @@ if ( ! function_exists( 'itng_setup' ) ) :
 				'script',
 			)
 		);
-		
+
 		// Set up the WordPress core custom background feature.
 		add_theme_support(
 			'custom-background',
@@ -87,7 +87,7 @@ if ( ! function_exists( 'itng_setup' ) ) :
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
-		
+
 		// Custom Image sizes for the theme
 		add_image_size('itng_square_thumb', 500, 500, true);
 		add_image_size('itng_blog_thumb', 700, 490, true);
@@ -107,7 +107,7 @@ if ( ! function_exists( 'itng_setup' ) ) :
 					'flex-width'  => true,
 					'flex-height' => true,
 				)
-			) 
+			)
 		);
 	}
 endif;
@@ -157,7 +157,7 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- *	Custom CSS 
+ *	Custom CSS
  */
 require get_template_directory() . '/inc/css-mods.php';
 
@@ -184,7 +184,7 @@ require get_template_directory() . '/inc/walker.php';
 /**
  *	The Meta Box for the Page
  */
- 
+
 require get_template_directory() . '/framework/metabox/display-options.php';
 
 /**

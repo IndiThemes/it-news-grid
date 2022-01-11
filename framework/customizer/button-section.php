@@ -106,7 +106,7 @@ add_action( 'customize_register', function( $manager ) {
 		new Button( $manager, 'itng-plus', array(
 			'title'       => __( 'Want more Features?', 'it-news-grid' ),
 			'priority'		=> 1,
-			'button_text' => __( 'Go Pro', 'oro' ),
+			'button_text' => __( 'Get Pro Version', 'oro' ),
 			'button_url'  => 'https://indithemes.com/product/it-news-grid-plus/'
 		) )
 	);

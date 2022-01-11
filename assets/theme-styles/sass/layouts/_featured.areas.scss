@@ -60,6 +60,9 @@
 	.itng-featured-post-1 {
 		h2 {
 			font-size: 1.8em;
+			@media (max-width: 767px) {
+				font-size: 1.2em;
+			}
 		}
 	}
 	.itng-featured-post-thumb {
@@ -140,6 +143,9 @@
 		}
 		h3 {
 			color: white;
+			@media (max-width: 767px) {
+				font-size: 1.1em;
+			}
 		}
 		.itng-slider-post-meta {
 			position: absolute;
@@ -241,6 +247,9 @@
 				text-transform: uppercase;
 				font-weight: 700;
 				padding: 0.4em 0.5em;
+			}
+			@media (max-width: 767px) {
+				display: none;
 			}
 		}
 		.featured-news-list {

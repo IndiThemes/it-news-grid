@@ -166,3 +166,16 @@ input::-moz-focus-inner, input::-moz-focus-outer {
   background: #5dd348;
   border: 0;
 }
+
+.control-section-itng-button .accordion-section-title:hover, .control-section-itng-button .accordion-section-title:focus {
+  background-color: #fff;
+}
+.control-section-itng-button .accordion-section-title .button {
+  margin-top: -4px;
+  margin-left: 8px;
+  font-weight: 400;
+}
+.rtl .control-section-itng-button .accordion-section-title .button {
+  margin-left: 0;
+  margin-right: 8px;
+}

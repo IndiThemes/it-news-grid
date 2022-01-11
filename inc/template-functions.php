@@ -58,7 +58,7 @@ add_action('itng_pagination', 'itng_get_pagination');
  *	Function to generate meta data for the posts
  */
  if ( !function_exists('itng_get_metadata') ) {
-	 
+
 	function itng_get_metadata() {
 		if ( 'post' === get_post_type() ) :
 			?>
@@ -75,22 +75,22 @@ add_action('itng_pagination', 'itng_get_pagination');
 }
 add_action('itng_metadata', 'itng_get_metadata');
 
- 
+
 
 /**
  *	Function for post content on Blog Page
  */
  if ( !function_exists('itng_get_blog_excerpt' ) ) {
-	 
+
 	 function itng_get_blog_excerpt( $length = 30 ) {
-	
+
 		 global $post;
 		 $output	=	'';
-	
+
 		 if ( isset($post->ID) && has_excerpt($post->ID) ) {
 			 $output = $post->post_excerpt;
 		 }
-	
+
 		 elseif ( isset( $post->post_content ) ) {
 			 if ( strpos($post->post_content, '<!--more-->') ) {
 				 $output	=	get_the_content('');
@@ -99,9 +99,9 @@ add_action('itng_metadata', 'itng_get_metadata');
 				 $output	=	wp_trim_words( strip_shortcodes( $post->post_content ), $length );
 			 }
 		 }
-	
+
 		 $output	=	apply_filters('itng_excerpt', $output);
-	
+
 		 echo $output;
 	 }
 }
@@ -110,11 +110,11 @@ add_action('itng_metadata', 'itng_get_metadata');
 
 if ( !function_exists('itng_get_layout') ) {
 	function itng_get_layout( $cols = 'col_3' ) {
-		 
+
 		$layout	=	'framework/layouts/content';
-		 
+
 		get_template_part( $layout, 'blog', $cols );
-		 
+
 	}
 }
  add_action( 'itng_layout', 'itng_get_layout', 10 );
@@ -135,11 +135,11 @@ if ( !function_exists('itng_get_layout') ) {
  */
 if ( !function_exists('itng_get_sidebar') ) {
 	function itng_get_sidebar( $template ) {
-	
+
 	   global $post;
-	
+
 	   switch( $template ) {
-		   
+
 		    case "blog";
 		    if ( is_home() &&
 		    	get_theme_mod('itng_blog_sidebar_enable', 1) !== "" ) {
@@ -185,11 +185,11 @@ add_action('itng_sidebar', 'itng_get_sidebar', 10, 1);
   */
 if ( !function_exists('itng_sidebar_align') ) {
 	function itng_sidebar_align( $template = 'blog' ) {
-		
+
 		$align = 'page'	== $template ? get_post_meta( get_the_ID(), 'align-sidebar', true ) : get_theme_mod('itng_' . $template . '_sidebar_layout', 'right');
-	
+
 		$align_arr	=	['order-1', 'order-2'];
-	
+
 		if ( in_array( $template, ['single', 'blog', 'page', 'search', 'archive'] ) ) {
 			return 'right' == $align ? $align_arr : array_reverse($align_arr);
 		}
@@ -213,7 +213,7 @@ if ( !function_exists('itng_sidebar_align') ) {
  *	The About Author Section
  */
 if ( !function_exists('itng_about_author') ) {
-	
+
 	function itng_about_author( $post ) { ?>
 		<div id="author_box" class="row no-gutters">
 			<div class="author_avatar col-2">
@@ -230,7 +230,7 @@ if ( !function_exists('itng_about_author') ) {
 		</div>
 	<?php
 	}
-	
+
 }
 
  /**
@@ -238,7 +238,7 @@ if ( !function_exists('itng_about_author') ) {
   */
 if ( !function_exists('itng_get_sidebar_before_content') ) {
 	function itng_get_sidebar_before_content() {
-		
+
 		if ( is_front_page() && is_active_sidebar('before-content') ) :
 			?>
 			<div id="itng-before-content" class="container">
@@ -279,40 +279,22 @@ add_action('itng_after_content', 'itng_get_after_content');
  */
  if ( !function_exists('itng_get_footer') ) {
 	 function itng_get_footer() {
-		 
+
 		$path 	=	'/framework/footer/footer';
 		get_template_part( $path, get_theme_mod( 'itng_footer_cols', 4 ) );
 	 }
  }
  add_action('itng_footer', 'itng_get_footer');
-   
-/**
- *	Function for AJAX request to get meta data of page set as Front Page
-**/
-
-/*
-add_action('wp_ajax_front_page_meta', 'itng_front_page_ajax');
-function itng_front_page_ajax() {
-	
-	$page_id	=	intval( $_POST['id'] );
-	$path		=	get_page_template_slug($page_id);
-
-	echo $path;
-	
-	wp_die();
-	
-}
-*/
 
 
 /**
  *	Related Posts of a Single Post
  */
- 
+
 function itng_get_related_posts() {
-	
+
 	global $post;
-	
+
 	$related_args = apply_filters( 'itng_related_posts_args', [
 		"posts_per_page"		=>	3,
 		"ignore_sticky_posts"	=>	true,
@@ -320,18 +302,18 @@ function itng_get_related_posts() {
 		"category_name"			=>	get_the_category($post)[0]->slug,
 		"orderby"				=> "rand"
 	] );
-	
+
 	$related_query	=	new WP_Query( $related_args );
-	
+
 	if ( $related_query->have_posts() ) : ?>
 		<div id="itng_related_posts_wrapper">
 			<h3 id="itng_related_posts_title"><?php _e('Related Posts', 'it-news-grid'); ?></h3>
 			<div class="itng-related-posts row">
 				<?php
 					while ( $related_query->have_posts() ) : $related_query->the_post();
-			
+
 						get_template_part( 'framework/layouts/content', 'blog' );
-						
+
 					endwhile;
 				?>
 			</div>
@@ -347,34 +329,34 @@ add_action('itng_related_posts', 'itng_get_related_posts');
  *	ITNG Featured Category
  */
 if ( !function_exists('itng_featured_category') ) {
-	
+
 	function itng_featured_category() {
-		
+
 		if ( empty( get_theme_mod('itng-featured-cat') ) ) {
 			return;
 		}
-		
+
 		if 	( is_front_page() && get_theme_mod( 'itng-featured-cat-front-enable' )
 		   || !is_front_page() && is_home() && get_theme_mod( 'itng-featured-cat-blog-enable' ) ) {
-			   
+
 			$cat = get_theme_mod('itng-featured-cat', 0);
-		
+
 			$args = array(
 				'posts_per_page'		=>	4,
 				'ignore_sticky_posts'	=>	true,
 				'cat'					=>	$cat
 			);
-			
+
 			$cat_query	=	new WP_Query( $args );
-			
+
 			if ( $cat_query->have_posts() ) : ?>
 				<div id="itng-featured-cat" class="container">
 					<div class="row">
 					<?php
 					while ( $cat_query->have_posts() ) : $cat_query->the_post(); ?>
-					
+
 						<?php global $post; ?>
-						
+
 						<div class="featured-cat-thumb-wrapper col-md-6 col-lg-3">
 							<div class="featured-cat-thumb">
 								<a href="<?php esc_url( the_permalink() ); ?>">
@@ -387,16 +369,16 @@ if ( !function_exists('itng_featured_category') ) {
 								</a>
 							</div>
 						</div>
-						
+
 					<?php
 					endwhile; ?>
 					</div>
 				</div>
 				<?php
 				endif;
-				
+
 			wp_reset_postdata();
-		   
+
 		}
 	}
 }
@@ -407,7 +389,7 @@ add_action('itng_before_content', 'itng_featured_category', 20);
  *	Featured Post Markup
  */
 if ( !function_exists('itng_featured_post_markup') ) {
-	
+
 	function itng_featured_post_markup( $post ) {
 		?>
 		<a href=<?php echo esc_url( get_the_permalink( $post ) ) ?>>
@@ -433,53 +415,53 @@ if ( !function_exists('itng_featured_post_markup') ) {
  *	ITNG Featured Post
  */
 if ( !function_exists('itng_featured_posts') ) {
-	
+
 	function itng_featured_posts() {
-		
+
 		if ( empty( get_theme_mod('itng-featured-posts') ) ) {
 			return;
 		}
-		
+
 		if 	( is_front_page() && get_theme_mod( 'itng-featured-posts-front-enable' )
 		   || !is_front_page() && is_home() && get_theme_mod( 'itng-featured-posts-blog-enable' ) ) {
-			   
+
 			$cat = get_theme_mod('itng-featured-posts', 0);
-		
+
 			$args = array(
 				'posts_per_page'		=>	3,
 				'ignore_sticky_posts'	=>	true,
 				'cat'					=>	$cat
 			);
-			
+
 			$posts = [];
-			
+
 			$cat_query	=	new WP_Query( $args );
-			
-			if ( $cat_query->have_posts() ) : 
+
+			if ( $cat_query->have_posts() ) :
 				while ( $cat_query->have_posts() ) : $cat_query->the_post();
-					
+
 					global $post;
 					array_push( $posts, $post );
-					
+
 				endwhile;
 			endif;
-				
+
 			wp_reset_postdata(); ?>
-			
+
 			<div id="itng-featured-posts" class="container">
 				<div class="row no-gutters">
-					
+
 					<div class="itng-featured-post-1 col-lg-8">
 						<?php itng_featured_post_markup( $posts[0] ) ?>
 					</div>
-					
+
 					<div class="col-lg-4">
 						<div class="row no-gutters">
 							<div class="featured-post-2 col-md-6 col-lg-12"><?php itng_featured_post_markup( $posts[1] ) ?></div>
 							<div class="featured-post-3 col-md-6 col-lg-12"><?php itng_featured_post_markup( $posts[2] ) ?></div>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		<?php
@@ -500,7 +482,7 @@ function itng_featured_news_section() {
 	?>
 	<div id="itng-featured-news">
 		<div class="row no-gutters">
-			
+
 			<!-- Slider Section -->
 			<div id="itng-news-slider-container" class="col-xl-6">
 				<?php if ( get_theme_mod('itng-featured-news-slider-title', 'Trending') ) { ?>
@@ -510,24 +492,24 @@ function itng_featured_news_section() {
 				<?php
 					$cat	=	get_theme_mod( 'itng-featured-news-slider', 0 );
 					$count	=	get_theme_mod( 'itng-featured-news-slider-count', 3 );
-					
+
 					$args = array(
 						'ignore_sticky_posts'	=>	true,
 						'cat'					=>	$cat,
 						'posts_per_page'		=>	$count,
 					);
-					
+
 					$slider_query	=	new WP_Query( $args );
-					
+
 					// The Loop
 					if ( $slider_query->have_posts() ) :
 					while ( $slider_query->have_posts() ) : $slider_query->the_post();
-					
+
 						global $post;
 						?>
-						
+
 						<div class="slider-post-wrapper">
-							
+
 							<div class="slider-post">
 								<?php
 									if ( has_post_thumbnail() ) {
@@ -536,30 +518,30 @@ function itng_featured_news_section() {
 									else { ?>
 										<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ph_fp.png'); ?>" alt="<?php the_title_attribute(); ?>">
 									<?php
-									} 
+									}
 								?>
-								
-								
+
+
 							</div>
-							
+
 							<div class="itng-slider-post-meta">
 								<?php itng_posted_on(); ?>
 								<a href="<?php esc_url( the_permalink() ); ?>"><?php the_title( '<h3 class="slider-post-title">', '</h3>', true ); ?></a>
 								<div class="slider-post-cats">
-									
+
 								</div>
 							</div>
 						</div>
 					<?php
 					endwhile;
 					endif;
-					
+
 					// Reset Post Data
 					wp_reset_postdata();
 				?>
 				</div>
 			</div>
-			
+
 <!-- 			Thumbs Section. Class nomenclature is messed up -->
 			<div id="itng-featured-news-list-container" class="col-xl-3">
 				<?php if ( get_theme_mod('itng-featured-news-list-title', 'Trending') ) { ?>
@@ -568,25 +550,25 @@ function itng_featured_news_section() {
 				<div class="featured-news-list row no-gutters">
 					<?php
 						$list_cat	=	get_theme_mod('itng-featured-news-list');
-							
+
 						$args = array(
 							'posts_per_page'		=>	2,
 							'ignore_sticky_posts'	=>	true,
 							'cat'					=>	$cat,
 						);
-						
+
 						$list_query = new WP_Query( $args );
 
 						if ( $list_query->have_posts() ) :
 						while ( $list_query->have_posts() ) : $list_query->the_post();
-						
+
 							global $post;
-							
+
 							?>
 								<div class="itng-featured-post-list col-6 col-xl-12">
-									
+
 									<div class="featured-post-list-wrapper">
-										
+
 										<div class="featured-news-list-thumb">
 											<a href="<?php esc_url( the_permalink() ) ?>">
 												<?php
@@ -599,70 +581,70 @@ function itng_featured_news_section() {
 												?>
 											</a>
 										</div>
-										
+
 										<div class="featured-news-list-content">
-											
+
 											<?php itng_posted_on(); ?>
-											
+
 											<a href="<?php the_permalink(); ?>">
 												<?php the_title( '<h3 class="featured-news-list-title">', '</h3>' ); ?>
 											</a>
-											
+
 											<div class="itng-news-list-cats">
 												<?php
 													$cats = get_the_category();
-													
+
 													foreach ( $cats as $cat ) { ?>
 														<a href="<?php echo get_category_link( $cat->term_id) ?>"><?php echo $cat->name ?></a>
-													<?php	
+													<?php
 													}
 												?>
 											</div>
 										</div>
-										
+
 									</div>
-									
+
 								</div>
 							<?php
 						endwhile;
 						endif;
-						
+
 						// Reset Post Data
 						wp_reset_postdata();
 					?>
 				</div>
 			</div>
-			
+
 <!-- 			List Section -->
 			<div id="itng-featured-news-carousel-container" class="col-xl-3">
-				
+
 				<?php if ( get_theme_mod('itng-featured-news-car-title', 'Trending') ) { ?>
 					<h2 class="featured-news-car-title"><?php echo esc_html( get_theme_mod('itng-featured-news-car-title', 'Trending') ); ?></h2>
 				<?php } ?>
-				
+
 				<div class="news-carousel row no-gutters">
 					<?php
 					$car_cat	=	get_theme_mod('itng-featured-news-carousel');
-					
-						
+
+
 						$args = array(
 							'posts_per_page'		=>	4,
 							'ignore_sticky_posts'	=>	true,
 							'cat'					=>	$car_cat,
 						);
-						
+
 						$car_query = new WP_Query( $args );
 
 						if ( $car_query->have_posts() ) :
 						while ( $car_query->have_posts() ) : $car_query->the_post();
-						
+
 							global $post;
-							
+
 							?>
 								<div class="itng-featured-post-car col-12 col-md-6 col-xl-12">
-									
+
 									<div class="featured-post-car-wrapper row no-gutters align-items-center">
-										
+
 										<div class="featured-news-car-thumb col-4">
 											<a href="<?php esc_url( the_permalink() ) ?>">
 												<?php
@@ -675,22 +657,22 @@ function itng_featured_news_section() {
 												?>
 											</a>
 										</div>
-										
+
 										<div class="featured-news-car-content col-8">
 											<a href="<?php the_permalink(); ?>">
 												<?php the_title( '<h3 class="featured-car-list-title">', '</h3>' ); ?>
 											</a>
-											
+
 											<?php itng_posted_on(); ?>
 										</div>
-										
+
 									</div>
-									
+
 								</div>
 							<?php
 						endwhile;
 						endif;
-						
+
 						// Reset Post Data
 						wp_reset_postdata();
 					?>

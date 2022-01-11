@@ -21,53 +21,53 @@ Just Install the Theme from the WordPress Repository.
 
 * v1.0
 	Initial Upload.
-	
+
 * v1.0.1
 	Added and fixed major components
-	
+
 * v1.0.2
 	Updated Screenshot
-	
+
 * v1.0.3
 	Improved UX
-	
+
 * v1.0.4
 	More Development
-	
+
 * v1.0.5
 	Theme almost ready, waiting for review
-	
+
 * v1.0.6
 	Theme review, ready, awaiting review
-	
+
 * v1.0.7
 	Created Theme Page
 	Added Featured Areas
-	
+
 * v1.0.8
 	Fixed Bugs
 	Added More Flexibility Options
 	Optimized more
-	
+
 * v1.0.9
 	Added Options for Top Bar
-	
+
 * 1.0.10
 	Fixed the Logo size issue
 	Released IT News Grid Plus
-	
+
 * 1.0.11
 	Fixed Navigation issue in Style 1
 	Added Citations to Images in Single Post Page
 	Other Minor Bug Fixes
-	
+
 * 1.0.12
 	Fixed the Navigation Error
-	
+
 * v1.0.13
 	Made the theme pluggable
 	Improved the Navigation UI
-	
+
 * v1.0.14
 	Removed default Featured Image from blogs
 	Fixed Archive and Search Page title headings
@@ -75,18 +75,32 @@ Just Install the Theme from the WordPress Repository.
 
 * v1.1
 	Introduced a new Featured News Section
-	
+
 * v1.1.1
 	Added LinkedIn icon
 	Removed unused CSS
-	
+
 * v1.1.2
 	Fixed a Bug in Footer
 	Other Minor Bug fixes
-	
+
 * v1.1.3
 	Improved Navigation
 	Other Bug Fixes
 	Changed Screenshot
+
+* v1.1.4
+	Added get_search_form() filter
+	Updated 'Tested up to'
+
+* v1.1.5
+	Minor Bug Fixes and layout breaks
+
+* v1.1.6
+	Fixed the Pro Button
+
+* v1.1.7
+	Fixed Search Icon Layout in Header Style 2
+	Fixed "Ad Widget" Button Toggle
 
 Good luck!

@@ -13,8 +13,6 @@ jQuery(document).ready(function() {
 				goToBtn		=	searchArea.getElementsByTagName('button')[0],
 				goToField	=	searchBtn.previousElementSibling
 		 		
-		 		console.log( goToField )
-		 		
 		if ( searchBtn.classList.contains('is-toggled') ) {
 			searchBtn.focus()
 			searchArea.style.height = '0'
@@ -51,37 +49,6 @@ jQuery(document).ready(function() {
 	document.querySelector('.search-btn-sticky').addEventListener('click', function() {
 		toggleSearchFunction( this )
 	})
-	
-/*
-	document.querySelector('.search-btn-sticky').addEventListener('click', () => {
-		toggleSearchFunction()
-	})
-*/	
-/*
-	var	searchLabel = jQuery('#search-screen'),
-		searchInput	 = jQuery('.top_search_field'),
-		cancelSearch = jQuery('.cancel_search');
-	
-	searchScreen.hide();
-	
-	jQuery('#search-btn').on('click', function() {
-		searchScreen.fadeIn(200);
-		searchInput.focus();
-	});
-	
-	cancelSearch.on('click', function(e) {
-		searchScreen.fadeOut(200);
-		jQuery('#search-btn').focus();
-	});
-	
-	jQuery('#go-to-field').on('focus', function() {
-		jQuery(this).siblings('input[type="text"]').focus();
-	});
-	
-	jQuery('#go-to-close').on('focus', function() {
-		jQuery(this).siblings('button.cancel_search').focus();
-	});
-*/
 	
 	// Navigation
 	var clickedBtn;
@@ -215,7 +182,8 @@ jQuery(document).ready(function() {
 	if (itng.stickyNav !== "") {
 		var stickyNav = jQuery('#sticky-navigation');
 		stickyNav.css("opacity", "0");
-		function oroStickyMenu() {
+		
+		function itngStickyMenu() {
 			var height = jQuery(this).scrollTop();
 			if (height > 500) {
 				jQuery('body').addClass('has-sticky-menu');
@@ -231,8 +199,8 @@ jQuery(document).ready(function() {
 			}
 		}
 		jQuery(window).scroll(function() {
-			oroStickyMenu()
+			itngStickyMenu()
 		})
-		oroStickyMenu()
+		itngStickyMenu()
 	}
 });

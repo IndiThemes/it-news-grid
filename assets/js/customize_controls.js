@@ -1,25 +1,25 @@
 /**
  *	jQuery for Customizer Controls
  */
- 
+
 (function() {
-	
+
 	wp.customize.bind('ready', function() {
-		
+
 		var headerAd = wp.customize.control('itng_header_ad_widget').container.find("button")
 		headerAd.on('click', () => {
 			wp.customize.section('sidebar-widgets-sidebar-header').expand()
 		})
-		
+
 	})
-	
-	
+
+
 	var sidebarControls = ['blog', 'single', 'search', 'archive'];
-        
+
     jQuery.each( sidebarControls, function( index, value ) {
         wp.customize('itng_' + value + '_sidebar_enable', function( setting ) {
 	        var setupControl = function( control ) {
-	            
+
 	            var setActiveState = function() {
 	                control.active.set( setting.get() );
 	            };
@@ -30,21 +30,25 @@
             //wp.customize.control( 'diviner_blog_sidebar_align', setupControl );
         });
     });
-    
+
     wp.customize('itng_header_style', function( setting ) {
-	    
+
 	    var setupControl = function( control ) {
-            
+
+            var checkHeaderStyle = function() {
+                return setting.get() == 'style_2' ? true : false;
+            }
+
             var setActiveState = function() {
-                control.active.set( setting.get() );
+                control.active.set( checkHeaderStyle() );
             };
             setActiveState();
             setting.bind( setActiveState );
         };
-        wp.customize.control( 'itng_header_ad_widget', setupControl );
+        wp.customize.control(  'itng_header_ad_widget', setupControl );
     })
-        
-        
+
+
 	// Slider Control
 	wp.customize.bind('ready', function() {
         rangeSlider();
@@ -71,7 +75,7 @@
     };
 })( jQuery );
 
-wp.customize.sectionConstructor['wptrt-button'] = wp.customize.Section.extend( {
+wp.customize.sectionConstructor['itng-button'] = wp.customize.Section.extend( {
 
 	// No events for this type of section.
 	attachEvents: () => {},

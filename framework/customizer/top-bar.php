@@ -6,14 +6,14 @@ function itng_customize_register_social( $wp_customize ) {
 			'priority' 	=> 70,
 			'panel'		=> 'itng_header'
 	));
-	
+
 	$wp_customize->add_setting(
 		'itng_top_bar_enable', array(
 			'default'	=>	1,
 			'sanitize_callback'	=>	'itng_sanitize_checkbox'
 		)
 	);
-	
+
 	$wp_customize->add_control(
 		'itng_top_bar_enable', array(
 			'label'	=>	__('Enable Top Bar', 'it-news-grid'),
@@ -22,14 +22,30 @@ function itng_customize_register_social( $wp_customize ) {
 			'priority'	=>	1
 		)
 	);
-	
+
+	$wp_customize->add_setting(
+		'itng_top_menu_enable', array(
+			'default'	=>	1,
+			'sanitize_callback'	=>	'itng_sanitize_checkbox'
+		)
+	);
+
+	$wp_customize->add_control(
+		'itng_top_menu_enable', array(
+			'label'	=>	__('Enable Top Menu', 'it-news-grid'),
+			'type'	=>	'checkbox',
+			'section'	=>	'itng_social_section',
+			'priority'	=>	3
+		)
+	);
+
 	$wp_customize->add_setting(
 		'itng_social_enable', array(
 			'default'	=>	1,
 			'sanitize_callback'	=>	'itng_sanitize_checkbox'
 		)
 	);
-	
+
 	$wp_customize->add_control(
 		'itng_social_enable', array(
 			'label'	=>	__('Enable Social Icons', 'it-news-grid'),
@@ -86,7 +102,7 @@ function itng_customize_register_social( $wp_customize ) {
 		));
 
 	endfor;
-	
+
 }
 add_action( 'customize_register', 'itng_customize_register_social' );
 

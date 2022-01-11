@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 Requires at least: 5.5
 Tested up to: 5.7
 Requires PHP: 5.6
-Stable tag: 1.1.3
+Stable tag: 1.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,7 +32,7 @@ IT News Grid is a simple yet powerful grid based Blog WordPress Theme. With a cl
 
 = How to contact support for IT News Grid WordPress Theme? =
 
-= You can post it in the support forums here or mail us at support@indithemes.com 
+= You can post it in the support forums here or mail us at support@indithemes.com
 
 == Changelog ==
 
@@ -110,6 +110,16 @@ IT News Grid is a simple yet powerful grid based Blog WordPress Theme. With a cl
 = v1.1.4 =
 * Added get_search_form() filter
 * Updated 'Tested up to'
+
+= v1.1.5 =
+* Minor Bug Fixes and layout breaks
+
+= v1.1.6 =
+* Fixed the Pro Button
+
+= v1.1.7 =
+* Fixed Search Icon Layout in Header Style 2
+* Fixed "Ad Widget" Button Toggle
 
 == Credits ==
 
